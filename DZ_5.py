@@ -61,22 +61,26 @@ import pandas as pd
 # H0: mux = muy
 # H1: mux != muy
 
-alfa = 0.05
+# alfa = 0.05
 x = np.array([172, 177, 158, 170, 178,175, 164, 160, 169, 165])
 y = np.array([173, 175, 162, 174, 175, 168, 155, 170, 160, 163])
-x_mean = np.mean(x)
-y_mean = np.mean(y)
-x_v = np.var(x, ddof =1)
-y_v = np.var(y, ddof = 1)
-n_x = len(x)
-n_y = len(y)
-print (x_mean, y_mean, x_v, y_v, n_x, n_y )
+# x_mean = np.mean(x)
+# y_mean = np.mean(y)
+# x_v = np.var(x, ddof =1)
+# y_v = np.var(y, ddof = 1)
+# n_x = len(x)
+# n_y = len(y)
+# print (x_mean, y_mean, x_v, y_v, n_x, n_y )
 
-t_emp = (x_mean - y_mean)/math.sqrt((x_v/n_x) + (y_v/n_y))
-print(t_emp)
+# t_emp = (x_mean - y_mean)/math.sqrt((x_v/n_x) + (y_v/n_y))
+# print(t_emp)
 
-t1 = stats.t.ppf(alfa/2, df=2*(n_x -1))
-t2 = stats.t.ppf((1-alfa/2), df=2*(n_x -1))
+# t1 = stats.t.ppf(alfa/2, df=2*(n_x -1))
+# t2 = stats.t.ppf((1-alfa/2), df=2*(n_x -1))
 
-print (t1, t2)
-# H0 не отвергается. Статистически значимых различий нет.
+# print (t1, t2)
+# # H0 не отвергается. Статистически значимых различий нет.
+
+p_v = stats.ttest_ind (x,y)
+print (p_v)
+
